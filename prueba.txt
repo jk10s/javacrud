@@ -1,2 +1,6 @@
 este es un ejemplo de texto
+
 nuevo texto
+
+otro ejemplo
+
