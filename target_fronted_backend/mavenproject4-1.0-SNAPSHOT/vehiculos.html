@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Easy Parking - Usuarios</title>
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+        <!-- Custom Stylesheet -->
+        <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+        <!-- Page plugins css -->
+        <link href="./plugins/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+        <!-- Color picker plugins css -->
+        <link href="./plugins/jquery-asColorPicker-master/css/asColorPicker.css" rel="stylesheet">
+        <!-- Date picker plugins css -->
+        <link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+        <!-- Daterange picker plugins css -->
+        <link href="./plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+        <link href="./plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <!-- Custom Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!--*******************
+            Preloader start
+        ********************-->
+        <div id="preloader">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+        <!--*******************
+            Preloader end
+        ********************-->
+
+
+        <!--**********************************
+            Main wrapper start
+        ***********************************-->
+        <div id="main-wrapper">
+
+            <!--**********************************
+                Nav header start
+            ***********************************-->
+            <div class="nav-header">
+                <div class="brand-logo">
+                    <a href="index.html">
+                        <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                        <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                        <span class="brand-title">
+                            <img src="images/logo-text.png" height="45" alt="">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <!--**********************************
+                Nav header end
+            ***********************************-->
+
+            <!--**********************************
+                Header start
+            ***********************************-->
+            <div class="header">    
+                <div class="header-content clearfix">
+
+                    <div class="nav-control">
+                        <div class="ha  mburger">
+                            <span class="toggle-icon"><i class="icon-menu"></i></span>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <ul class="clearfix">
+                            <li class="icons dropdown">
+                                <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                    <span class="activity active"></span>
+                                    <img src="images/user/1.png" height="40" width="40" alt="">
+                                </div>
+                                <div class="drop-down dropdown-profile   dropdown-menu">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="app-profile.html"><i class="icon-user"></i> <span>Perfil</span></a>
+                                            </li>
+                                            <li><a href="index.html"><i class="icon-key"></i> <span>Cerrar Sesión</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--**********************************
+                Header end ti-comment-alt
+            ***********************************-->
+
+            <!--**********************************
+                Sidebar start
+            ***********************************-->
+            <div class="nk-sidebar">           
+                <div class="nk-nav-scroll">
+                    <ul class="metismenu" id="menu">
+                        <li class="nav-label">Menú</li>
+
+                        <li class="mega-menu mega-menu-sm">
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Menú</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="">usuarios</a></li>
+                                <li><a href="./Estudiantes.html">vehiculos</a></li>
+                                <li><a href="./Grados.html">plazas</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <!--**********************************
+                Sidebar end
+            ***********************************-->
+
+            <!--**********************************
+                Content body start
+            ***********************************-->
+            <div class="content-body">
+                <div class="row page-titles mx-0">
+                    <h4 class="card-title">Usuarios</h4>
+                    <div class="col p-md-0">
+
+                        <ol class="breadcrumb">
+
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Menú</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Usuarios</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+
+                <div class="container-fluid" ng-app="usuariosuno" ng-controller="testController as ts">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="basic-form">
+                                        <form>
+                                                   <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label>Nombres</label>
+                                                    <input type="text" class="form-control" placeholder="Nombres" ng-model="ts.usuario.nombre">
+                                                </div>
+                                                 <div class="form-group col-md-6">
+                                                    <label>apellidos</label>
+                                                    <input type="text" class="form-control"  placeholder="apelllidos" ng-model="ts.usuario.apellido">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label> Usuarios</label>
+                                                    <input type="text" class="form-control"  placeholder="Usuarios" ng-model="ts.usuario.usuario">
+                                                </div>
+                                                 <div class="form-group col-md-6">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password" ng-model="ts.usuario.clave">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label>Tipo de Identificacion</label>
+                                                    <input type="email" class="form-control" placeholder="ipo de Identificacion" ng-model="ts.usuario.tipoidentificacion">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Identificacion</label>
+                                                    <input type="email" class="form-control" placeholder="Identificacion" ng-model="ts.usuario.identificacion">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label> email</label>
+                                                    <input type="text" class="form-control"  placeholder="Usuarios" ng-model="ts.usuario.correo">
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-dark" ng-click="ts.guardar()">Guardar</button>
+                                            <button type="submit" class="btn btn-dark" ng-click="ts.limpiar()">Limpiar Formulario</button>
+                                            <button type="submit" class="btn btn-dark" ng-click="ts.listar()">Listar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Lista de Usuarios</h4>
+                                <div class="table-responsive"> 
+                                    <table class="table table-bordered table-striped verticle-middle">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">nombresss</th>
+                                                <th scope="col">apellido</th>
+                                                <th scope="col">usuario</th>
+                                                <th scope="col">clave</th>
+                                                <th scope="col">tipo indentificacion</th>
+                                                <th scope="col">identificacion</th><!--                                            
+-->                                             <th scope="col">Editar</th>
+                                                <th scope="col">Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat = "usuario in ts.usuarios">
+                                                <td>{{usuario.nombre}}</td>
+                                                <td>{{usuario.apellido}}</td>
+                                                <td>{{usuario.usuario}}</td>
+                                                <td>{{usuario.clave}}</td>
+                                                <td>{{usuario.tipoidentificacion}}</td>
+                                                <td>{{usuario.identificacion}}</td>                                                
+                                               
+                                                <td><span><a href="#" data-toggle="tooltip" data-placement="top" title="Edit" ng-click="ts.seleccionar(profesor.idProfesores)"><i class="fa fa-pencil color-muted m-r-5"></i> </a></span>
+                                                </td>
+                                                <td><span><a href="#" data-toggle="tooltip" data-placement="top" title="Close" ng-click="ts.eliminar(profesor.idProfesores)"><i class="fa fa-close color-danger"></i></a></span>
+                                                </td>-->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #/ container -->
+
+            </div>
+            <!--**********************************
+                Content body end
+            ***********************************-->
+
+
+            <!--**********************************
+                Footer start
+            ***********************************-->
+            <div class="footer">
+                <div class="copyright">
+                    <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                </div>
+            </div>
+            <!--**********************************
+                Footer end
+            ***********************************-->
+        </div>
+        <!--**********************************
+            Main wrapper end
+        ***********************************-->
+
+        <!--**********************************
+            Scripts
+        ***********************************-->
+        <script src="plugins/common/common.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/gleek.js"></script>
+        <script src="js/styleSwitcher.js"></script>
+        <script src="./plugins/moment/moment.js"></script>
+        <script src="./plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+        <!-- Clock Plugin JavaScript -->
+        <script src="./plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+        <!-- Color Picker Plugin JavaScript -->
+        <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+        <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+        <script src="./plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+        <!-- Date Picker Plugin JavaScript -->
+        <script src="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <!-- Date range Plugin JavaScript -->
+        <script src="./plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="./plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <script src="./js/plugins-init/form-pickers-init.js"></script>
+    </body>
+    <script>
+                                                    var app = angular.module('usuariosuno', []);
+                                                    app.controller('testController', ['$http', initController]);
+                                                    function initController($http) {
+                                                        var controlador = this;
+
+                                                        controlador.listar = function () {
+                                                            var parametros = {opcion: "listar"};
+                                                            $http({
+                                                                method: 'POST',
+                                                                url: 'http://localhost:8080/mavenproject4/controllers/usuariosController.jsp',
+                                                                params: parametros
+                                                            }).then(function (res) {
+                                                                console.log(res);
+                                                                controlador.usuarios = res.data;
+                                                            });
+                                                        };
+
+                                                        controlador.guardar = function () {
+                                                            if (controlador.profesor.idProfesores === "undefined") {
+                                                                var parametros = {opcion: "insertar", data: JSON.stringify(controlador.profesor)};
+                                                                //alert("hola " + controlador.profesor.fechaNacimiento);
+                                                                $http({
+                                                                    method: 'POST',
+                                                                    url: 'http://localhost:8080/BackendS23/controller/profesoresController.jsp',
+                                                                    params: parametros
+                                                                }).then(function (res) {
+
+                                                                    console.log(res);
+                                                                    controlador.respuesta = res.data;
+                                                                    controlador.listar();
+                                                                    controlador.limpiar();
+                                                                });
+                                                            }else{
+                                                               var parametros = {opcion: "actualizar", data: JSON.stringify(controlador.profesor)};
+                                                                //alert("hola " + controlador.profesor.fechaNacimiento);
+                                                                $http({
+                                                                    method: 'POST',
+                                                                    url: 'http://localhost:8080/BackendS23/controller/profesoresController.jsp',
+                                                                    params: parametros
+                                                                }).then(function (res) {
+                                                                    console.log(res);
+                                                                    controlador.respuesta = res.data;
+                                                                    controlador.listar();
+                                                                    controlador.limpiar();
+                                                                }); 
+                                                            }
+                                                        };
+
+                                                        controlador.limpiar = function () {
+                                                            //alert("hola " + controlador.categoria);
+                                                            controlador.usuario.nombre = "";
+                                                            controlador.usuario.apellido = "";
+                                                            controlador.usuario.usuario = "";
+                                                            controlador.usuario.clave = "";
+                                                            controlador.usuario.tipoidentificacion = "";
+                                                            controlador.usuario.identificacion = "";
+                                                        
+                                                       
+
+                                                        };
+
+                                                        controlador.seleccionar = function (id) {
+                                                            for (var i = 0; i < controlador.profesores.length; i++) {
+                                                                if (id === controlador.profesores[i].idProfesores) {
+                                                                    controlador.profesor = controlador.profesores[i];
+                                                                }
+                                                            }
+                                                        };
+                                                        
+                                                        controlador.eliminar = function (id) {
+                                                            
+                                                            for (var i = 0; i < controlador.profesores.length; i++) {
+                                                                if (id === controlador.profesores[i].idProfesores) {
+                                                                    controlador.profesor = controlador.profesores[i];
+                                                                }
+                                                            }
+                                                                var parametros = {opcion: "eliminar", data: JSON.stringify(controlador.profesor)};
+                                                                //alert("hola " + controlador.profesor.fechaNacimiento);
+                                                                $http({
+                                                                    method: 'POST',
+                                                                    url: 'http://localhost:8080/BackendS23/controller/profesoresController.jsp',
+                                                                    params: parametros
+                                                                }).then(function (res) {
+
+                                                                    console.log(res);
+                                                                    //controlador.respuesta = res.data;
+                                                                    controlador.listar();
+                                                                    //controlador.limpiar();
+                                                                });
+                                                            
+                                                        };
+                                                    }
+    </script>
+</html>

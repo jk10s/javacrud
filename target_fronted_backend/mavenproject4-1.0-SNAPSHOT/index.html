@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Easy Parking</title>
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+        <link href="css/style.css" rel="stylesheet">
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: "Open Sans";
+                color: #fff;
+            }
+            .section{
+                background: url("./bg2.jpg");
+                height: 100vh;
+                width: 100%;
+                background-size: cover;
+                background-position: center center;
+            }
+            .form-container{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 380px;
+                padding: 50px 30px;
+                border-radius: 10px;
+                box-shadow:7px 7px 60px #000;
+            }
+            h1{
+                color: #ffffff;
+                font-size: 2em;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            .control input{
+                padding: 10px;
+                font-size: 16px;
+                display: block;
+                width: 100%;
+                color:#000;
+                background: #ddd;
+                outline: none;
+                border: none;
+                margin: 1em 0;
+
+            }
+            .control .btn{
+                color: #fff;
+                text-transform: uppercase;
+                background: crimson;
+                opacity: .7;
+                transition:opacity .3s ease;
+            }
+            .btn:focus{
+                opacity: 1;
+            }
+            p{
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                opacity: .7;
+            }
+            a:hover{
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="section">
+
+            <div class="form-container" ng-app="login" ng-controller="testController as ts">
+                <a class="text-center" > <h1>Easy Parking</h1></a>
+
+                <form >
+                    <div class="control">
+                        <label for="name">Usuario</label>
+                        <input type="text" placeholder="Usuario" ng-model="ts.usuario">
+                    </div>
+                    <div class="control">
+                        <label for="psw">Contraseña</label>
+                        <input type="password"  placeholder="Clave" ng-model="ts.clave">
+                    </div> 
+                    <div class="control">
+                    <button class="btn login-form__btn submit w-100" ng-click="ts.login()">Ingresar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <script src="plugins/common/common.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/gleek.js"></script>
+        <script src="js/styleSwitcher.js"></script>
+    </body>
+    <script>
+                        var app = angular.module('login', []);
+                        app.controller('testController', ['$http', initController]);
+                        function initController($http) {
+                            var controlador = this;
+
+                            controlador.login = function () {
+                                var parametros = {opcion: "login", data: JSON.stringify(controlador)};
+                                $http({
+                                    method: 'POST',
+                                    url: 'http://localhost:8080/mavenproject4/controllers/usuariosController.jsp?',
+                                    params: parametros
+                                }).then(function (res) {
+                                    //alert("hola");
+                                    console.log(res);
+                                    controlador.respuesta = res.data;
+                                    if (res.data.idUsuarios == 0) {
+                                        alert("El usuario y/o clave insgresados no son validos, por favor verifcar");
+                                    } else {
+                                        window.location.href = "usuarios.html";
+                                    }
+                                });
+                            }
+                        }
+    </script>
+</html>
